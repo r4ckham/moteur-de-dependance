@@ -5,10 +5,12 @@
  * Date: 03/05/2018
  * Time: 14:46
  */
+namespace Entity;
 
-class Addresse
+use Interfaces\InterfaceAddresse;
+
+class Addresse implements InterfaceAddresse
 {
-    //testus
     private $numero;
     private $rue;
     private $codePostale;
@@ -20,5 +22,10 @@ class Addresse
         $this->rue = $rue;
         $this->codePostale = $codePostal;
         $this->ville = $ville;
+    }
+
+    public function getAddresseComplete()
+    {
+        return "$this->numero , $this->rue , $this->codePostale , $this->codePostale .";
     }
 }

@@ -12,6 +12,9 @@ namespace Controllers;
 
 use Core\Controller;
 use Core\View;
+use Entity\AddresseBasique;
+use Entity\Personne;
+use Entity\UsinePersonne;
 
 /**
  * Sample controller showing a construct and 2 methods and their typical usage.
@@ -34,6 +37,19 @@ class Welcome extends Controller
     {
         $data['title'] = $this->language->get('welcome_text');
         $data['welcome_message'] = $this->language->get('welcome_message');
+
+
+
+        //$address = new AddresseBasique('test test un deux un deux');
+        $factory = new UsinePersonne();
+
+        //$person = new Personne($address);
+        $robert = $factory->createParigot(1, 'Rue de la Paix', 14);
+
+        //$person->getAddresse()->getAddresseComplete(); // 'test test un deux un deux'
+        $addresseDeRobert = $robert->getAddresse()->getAddresseComplete();
+
+        var_dump($addresseDeRobert);
 
         View::renderTemplate('header', $data);
         View::render('welcome/welcome', $data);
