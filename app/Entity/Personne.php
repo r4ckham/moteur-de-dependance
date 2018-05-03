@@ -8,7 +8,7 @@
 
 namespace Entity;
 
-use Addresse;
+use Entity\Addresse;
 use Interfaces\InterfaceAddresse;
 
 class Personne
