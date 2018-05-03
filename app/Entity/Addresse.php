@@ -6,7 +6,7 @@
  * Time: 14:46
  */
 
-class Address
+class Addresse
 {
     private $numero;
     private $rue;
