@@ -22,7 +22,7 @@ class UsinePersonne
         return 75000 + $arrondissement;
     }
 
-    public function createParigot($number, $street, $arrondissement)
+    public function createAdresse($number, $street, $arrondissement)
     {
         return $this->createPersonne($number, $street, $this->getCodePostalFromArrondissement($arrondissement), 'Paris', 'France');
     }

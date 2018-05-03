@@ -44,12 +44,12 @@ class Welcome extends Controller
         $factory = new UsinePersonne();
 
         //$person = new Personne($address);
-        $robert = $factory->createParigot(1, 'Rue de la Paix', 14);
+        $add = $factory->createAdresse(1, 'Rue de la Paix', 14);
 
         //$person->getAddresse()->getAddresseComplete(); // 'test test un deux un deux'
-        $addresseDeRobert = $robert->getAddresse()->getAddresseComplete();
+        $addresse = $add->getAddresse()->getAddresseComplete();
 
-        var_dump($addresseDeRobert);
+        var_dump($addresse);
 
         View::renderTemplate('header', $data);
         View::render('welcome/welcome', $data);
