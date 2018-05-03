@@ -32,7 +32,7 @@ class Config
         /*
          * Define relative base path.
          */
-        define('DIR', '/');
+        define('DIR', 'http://localhost/moteur-de-dependance/');
 
         /*
          * Set default controller and method for legacy calls.
@@ -48,7 +48,7 @@ class Config
         /*
          * Set a default language.
          */
-        define('LANGUAGE_CODE', 'en');
+        define('LANGUAGE_CODE', 'fr');
 
         //database details ONLY NEEDED IF USING A DATABASE
 
