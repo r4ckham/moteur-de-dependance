@@ -10,11 +10,13 @@ namespace Entity;
 
 class UsinePersonne
 {
-    public function createPersonne($numero , $rue , $codePostal , $ville)
-    {
-        $addresse = new Addresse($numero , $rue , $codePostal , $ville);
+    private $addresse ;
 
-        return new Personne($addresse);
+    public function createPersonne($numero , $rue , $codePostal , $ville , $nom , $prenom)
+    {
+        $this->addresse = new Addresse($numero , $rue , $codePostal , $ville);
+
+        return new Personne($this->addresse , $nom , $prenom);
     }
 
     private function getCodePostalFromArrondissement($arrondissement)
@@ -22,9 +24,9 @@ class UsinePersonne
         return 75000 + $arrondissement;
     }
 
-    public function createAdresse($number, $street, $arrondissement)
+    public function createParisien($number, $street, $arrondissement , $nom , $prenom)
     {
-        return $this->createPersonne($number, $street, $this->getCodePostalFromArrondissement($arrondissement), 'Paris', 'France');
+        return $this->createPersonne($number, $street, $this->getCodePostalFromArrondissement($arrondissement), 'Paris', 'France' , $nom , $prenom);
     }
 
 }

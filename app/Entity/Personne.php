@@ -9,15 +9,19 @@
 namespace Entity;
 
 use Entity\Addresse;
-use Interfaces\InterfaceAddresse;
+use Interfaces\InterfacePersonne;
 
-class Personne
+class Personne implements InterfacePersonne
 {
     private $addresse;
+    private $nom;
+    private $prenom;
 
-    public function __construct(InterfaceAddresse $address)
+    public function __construct(InterfaceAddresse $address , $nom , $prenom)
     {
         $this->addresse = $address;
+        $this->nom = $nom;
+        $this->prenom = $prenom;
     }
 
     /**
@@ -26,6 +30,21 @@ class Personne
     public function getAddresse()
     {
         return $this->addresse;
+    }
+
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    public function getNomComplet()
+    {
+        return "Nom : $this->nom ; Prenom : $this->prenom";
     }
 
 

@@ -38,18 +38,14 @@ class Welcome extends Controller
         $data['title'] = $this->language->get('welcome_text');
         $data['welcome_message'] = $this->language->get('welcome_message');
 
-
-
-        //$address = new AddresseBasique('test test un deux un deux');
         $factory = new UsinePersonne();
 
-        //$person = new Personne($address);
-        $add = $factory->createAdresse(1, 'Rue de la Paix', 14);
+        $personne = $factory->createPersonne(15 , 'avenue de la liberté' , 34000 , 'Montpellier' , "Rougelot" , "Ugo");
 
-        //$person->getAddresse()->getAddresseComplete(); // 'test test un deux un deux'
-        $addresse = $add->getAddresse()->getAddresseComplete();
+        $parisien = $factory->createParisien(1, 'Rue de la Paix', 14 , "Parichien" , "Jean-michel");
+        $addresseDeParis = $parisien->getAddresse()->getAddresseComplete();
 
-        var_dump($addresse);
+        var_dump( $personne->getNomComplet() , $personne->getAddresse() , $addresseDeParis);
 
         View::renderTemplate('header', $data);
         View::render('welcome/welcome', $data);
